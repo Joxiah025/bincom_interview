@@ -37,9 +37,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="<?php echo base_url();?>">Polls</a></li>
-            <li><a href="<?php echo base_url('index.php/polling/lga');?>">LGA</a></li>
-            <li><a href="<?php echo base_url('index.php/polling/add');?>">Add Result</a></li>
+            <li class="<?php if(($this->uri->segment('2') == 'polling') OR ($this->uri->segment('2') == '') OR ($this->uri->segment('1') == '')){ echo 'active';}?>"><a href="<?php echo base_url();?>">Polls</a></li>
+            <li class="<?php if($this->uri->segment('2') == 'lga'){ echo 'active';}?>"><a href="<?php echo base_url('polling/lga');?>">LGA</a></li>
+            <li class="<?php if($this->uri->segment('2') == 'add'){ echo 'active';}?>"><a href="<?php echo base_url('polling/add');?>">Add Result</a></li>
             <!--<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
